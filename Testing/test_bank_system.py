@@ -2,12 +2,23 @@ import unittest
 from bank_system import OnlineBank, User
 
 
+
 class TestBankSystem(unittest.TestCase):
     def setUp(self):
         self.online_bank = OnlineBank()
         self.user = User("Nizar", "admin")
         self.online_bank.register("Alberto", "123azerty")
         self.online_bank.log_in_user("Alberto", "123azerty")
+
+    # Using setUpClass---
+    # class TestBankSystem(unittest.TestCase):
+    # @classmethod
+    # def setUpClass(cls):
+    #     cls.online_bank = OnlineBank()
+    #     cls.user = User("Nizar", "admin")
+    #     cls.online_bank.register("Alberto", "123azerty")
+    #     cls.online_bank.log_in_user("Alberto", "123azerty")
+
 
     def test_valid_user(self):
         self.assertIsInstance(self.user, User)
@@ -75,3 +86,7 @@ class TestBankSystem(unittest.TestCase):
     def test_deposit_withan_invalid_user(self):
         result = self.online_bank.deposit("Darth Vader", 4000)
         self.assertIsNone(result)
+
+
+if __name__ == '__main__':
+    unittest.main()
