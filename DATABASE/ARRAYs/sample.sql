@@ -1,3 +1,7 @@
+CREATE DATABASE countries;
+
+\c countries
+
 CREATE TABLE country_table (
 	id SERIAL PRIMARY KEY,
 	country_code VARCHAR (3),
