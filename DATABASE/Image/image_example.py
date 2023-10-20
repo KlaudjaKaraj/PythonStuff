@@ -5,7 +5,7 @@ from io import BytesIO
 db_params = {
     "database": "albums",
     "user": "postgres",
-    "password": "postgres",
+    "password": "doublek",
     "host": "localhost",
     "port": "5432",
 }
@@ -15,7 +15,7 @@ conn = psycopg2.connect(**db_params)
 
 cur =conn.cursor()
 
-with open('some_image.jpeg','rb') as image_file :
+with open('image.jpeg','rb') as image_file :
     image_binary = image_file.read()
     
 
